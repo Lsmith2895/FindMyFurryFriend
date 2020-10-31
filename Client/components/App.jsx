@@ -39,7 +39,7 @@ class App extends React.Component {
         }
 
         return (
-            <div>
+            <div className='all'>
                 <div className='Title'> Find My Furry Friend</div>
                 <div className='NavBar'>
                     <button onClick={this.changePage}> HOME </button>
