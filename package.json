@@ -1,0 +1,40 @@
+{
+  "name": "findmyfurryfriend",
+  "version": "1.0.0",
+  "description": "Find My Furry Friend is a social application designed to alert others in your area that your pet has gotten away. It will send a message via SMS or through the app depending on your choice of set up. This messages will include things like your pets name, a picture, and how friendly they might be. It is designed to get the news out quickly and have others searching for your best friend ensuring they come back safe and sound.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon server",
+    "build": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lsmith2895/FindMyFurryFriend.git"
+  },
+  "author": "Logan A. Smith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lsmith2895/FindMyFurryFriend/issues"
+  },
+  "homepage": "https://github.com/Lsmith2895/FindMyFurryFriend#readme",
+  "dependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "axios": "^0.21.0",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.1.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "node": "^15.0.1",
+    "nodemon": "^2.0.6",
+    "path": "^0.12.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "webpack": "^5.3.2"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.1.0"
+  }
+}
