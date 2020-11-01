@@ -2,7 +2,7 @@ import React from 'react';
 
 const FoundColumn = props => (
     <div className='columnTitle'>
-        Recently Found
+        <span>Recently Found</span>
     </div>
 )
 

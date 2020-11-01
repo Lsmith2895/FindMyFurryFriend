@@ -40,12 +40,14 @@ class App extends React.Component {
 
         return (
             <div className='all'>
-                <div className='Title'> Find My Furry Friend</div>
-                <div className='NavBar'>
-                    <button onClick={this.changePage}> HOME </button>
-                    <button onClick={this.changePage}> I've Lost My Pet </button>
-                    <button onClick={this.changePage}> My Account </button>
-                </div>
+                <nav className='NavBar'>
+                <div className='Title'>Find My Furry Friend</div>
+                    <div className='HomeSelector' onClick={this.changePage}> HOME </div>
+                    <div className='LostSelector' onClick={this.changePage}> I've Lost My Pet </div>
+                    <div className='FAQSelector'>FAQ</div>
+                    <div className='TrialSelector'><span>START ONE MONTH FREE TRIAL</span></div>
+                    <div className='AccountSelector' onClick={this.changePage}> My Account </div>
+                </nav>
                 <div className='CurrentPage'>{currentPage}</div>
             </div>
         )
