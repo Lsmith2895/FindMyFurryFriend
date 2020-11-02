@@ -105,6 +105,24 @@ body{
 .PetName{
     margin-top: 50px;
 }
+.LostPetForm{
+    margin-top: 50px;
+    color: #F62C72;
+    margin-left: 43%;
+   
+}
+.LostPetForm label{
+    margin-left: 10px
+}
+.LostPetForm input{
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.LostPetForm h3{
+    margin: 0px;
+    text-decoration: underline;
+}
 
   /* HOVER STATES */
 .HomeSelector:hover{
