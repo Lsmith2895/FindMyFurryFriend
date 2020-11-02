@@ -1,22 +1,23 @@
 import React from 'react';
 import Home from './HomePage.jsx';
 import LostPet from './LostPetPage';
+import axios from 'axios';
 
 class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             page: 'lost',
-            OwnerName: '',
-            Email: '',
-            Phone: '',
-            PetName: '',
-            Collar: 'None',
+            OwnerName: 'john',
+            Email: 'klajsd;lfkj',
+            Phone: '123-456-7891',
+            PetName: 'spot',
+            Collar: 'green',
             size: 'M',
             Friendliness: 'Nervous',
-            LastZip: '',
-            LastSeen: '',
-            Photo: '',
+            LastZip: '99999',
+            LastSeen: 'pratt park',
+            Photo: 'img.url.com',
         }
 
         this.changePage = this.changePage.bind(this);
@@ -42,12 +43,17 @@ class App extends React.Component {
         this.setState({
             [name]: value
         });
-        console.log(this.state);
     }
 
     handleSubmit(event) {
-        //send state to server via post request
-        console.log(this.state)
+        let formData = this.state
+        console.log(formData)
+        axios({
+            method: 'post',
+            url: '/api/LostForm',
+            data: formData, 
+          });
+        
         event.preventDefault();
     }
     render() {

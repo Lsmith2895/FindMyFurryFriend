@@ -12,9 +12,9 @@ app.get('/', (req, res) => {
 
 
 //empty request handlers
-app.post('/', (req, res) => {
-  console.log(req)
-  res.send(req)
+app.post('/api/LostForm', (req, res) => {
+  console.log('Reached Lost Form api call', req.body)
+  res.send(req.body)
 })
 
 app.get('/', (req, res) => {
@@ -22,6 +22,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(PORT, () => {
-  console.log('you have connected find my furry friend')
   console.log(`Server listening on port: ${PORT}`);
 })
