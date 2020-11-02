@@ -13,6 +13,7 @@ app.get('/', (req, res) => {
 
 //empty request handlers
 app.post('/', (req, res) => {
+  console.log(req)
   res.send(req)
 })
 

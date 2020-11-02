@@ -7,22 +7,49 @@ class App extends React.Component {
         super(props)
         this.state = {
             page: 'lost',
+            OwnerName: '',
+            Email: '',
+            Phone: '',
+            PetName: '',
+            Collar: 'None',
+            size: 'M',
+            Friendliness: 'Nervous',
+            LastZip: '',
+            LastSeen: '',
+            Photo: '',
         }
 
         this.changePage = this.changePage.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     changePage(event) {
-      if ( event.target.innerText === 'HOME' || event.target.innerText === 'Find My Furry Friend') {
-        this.setState({page:'home'})
-      } else if ( event.target.innerText === `I've Lost My Pet`) {
-        this.setState({page:'lost'})
-      } else if ( event.target.innerText === 'My Account') {
-        this.setState({page:'account'})
-      }
+        if (event.target.innerText === 'HOME' || event.target.innerText === 'Find My Furry Friend') {
+            this.setState({ page: 'home' })
+        } else if (event.target.innerText === `I've Lost My Pet`) {
+            this.setState({ page: 'lost' })
+        } else if (event.target.innerText === 'My Account') {
+            this.setState({ page: 'account' })
+        }
     }
 
+    handleChange(event) {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
 
+        this.setState({
+            [name]: value
+        });
+        console.log(this.state);
+    }
+
+    handleSubmit(event) {
+        //send state to server via post request
+        console.log(this.state)
+        event.preventDefault();
+    }
     render() {
         let currentPage;
         if (this.state.page === 'home') {
@@ -31,7 +58,11 @@ class App extends React.Component {
             </div>
         } else if (this.state.page === 'lost') {
             currentPage = <div>
-                <LostPet />
+                <LostPet
+                    handleSubmit={this.handleSubmit}
+                    form={this.state}
+                    handleChange={this.handleChange}
+                />
             </div>
         } else if (this.state.page === 'account') {
             currentPage = <div>
@@ -42,8 +73,8 @@ class App extends React.Component {
         return (
             <div className='all'>
                 <nav className='NavBar'>
-                {/* <img src='https://findmyfurryfriend.s3-us-west-2.amazonaws.com/FF-Logo.png'></img> */}
-                <div className='Title' onClick={this.changePage}>Find My Furry Friend</div>
+                    {/* <img src='https://findmyfurryfriend.s3-us-west-2.amazonaws.com/FF-Logo.png'></img> */}
+                    <div className='Title' onClick={this.changePage}>Find My Furry Friend</div>
                     <div className='HomeSelector' onClick={this.changePage}> HOME </div>
                     <div className='LostSelector' onClick={this.changePage}> I've Lost My Pet </div>
                     <div className='FAQSelector'>FAQ</div>
