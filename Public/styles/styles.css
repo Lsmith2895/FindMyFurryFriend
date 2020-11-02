@@ -4,8 +4,8 @@ body{
     padding: 0px;
     background-color: #2F2FA2;
 }
-.NavBar{
-    
+.PetCol img{
+    object-fit: cover;
 }
 .NavBar div{
     font-size: 20px;
@@ -21,13 +21,15 @@ body{
     margin-left: 2.5%;
     color: #F62C72;
 }
+.NavBar img{
+    height: 100px;
+    width: 100px;
+}
 .NavBar .HomeSelector{
     margin-left: 4.5%;
-    
 }
 .NavBar .LostSelector{
     margin-left: 4.5%;
-    
 }
 .NavBar .FAQSelector{
     margin-left: 4.5%;
@@ -45,7 +47,7 @@ body{
     color: #F62C72;
     margin-left: 4.5%;
     border: 3px solid #F62C72;
-    padding: 12px;
+    padding: 11px;
 }
 .column {
     margin-top: 20px;
@@ -64,9 +66,10 @@ body{
 .columnTitle {
   font-size: 25px;
   margin-top: 19px;
+  
 }
 .LostPets {
-    height: 600px;
+    height: auto;
 }
 .columnTitle span{
     color: #99738E;
@@ -78,16 +81,29 @@ body{
 .PetCol {
     float:left;
     width: 40%;
-    color: whitesmoke;
+    color: #F62C72;
     font-size: 23px;
 }
 .PetCol div{
-    margin-top: 30px;
+    margin-bottom: 25px;
+    
+}
+.PetCol div span{
+    color: whitesmoke;
 }
 .PetPicture {
+    margin-top: 50px;
     height: 280px;
     width: 230px;
-    border: 1px solid #F62C72;
+}
+.FoundPetButton {
+    text-align: center;
+    color: #99738E;
+    background-color: #242582;
+    border: 3px solid #553D67;
+}
+.PetName{
+    margin-top: 50px;
 }
 
   /* HOVER STATES */
@@ -99,4 +115,16 @@ body{
 }
 .LostSelector:hover{
     cursor: pointer;
+}
+.FoundPetButton:hover{
+    cursor: pointer;
+}
+.FAQSelector{
+    cursor: pointer;
+}
+.TrialSelector{
+    cursor: pointer;
+}
+.NavBar .Title:hover{
+ cursor: pointer;
 }

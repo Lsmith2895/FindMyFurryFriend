@@ -1,18 +1,19 @@
 import React from 'react';
 import Home from './HomePage.jsx';
+import LostPet from './LostPetPage';
 
 class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            page: 'home',
+            page: 'lost',
         }
 
         this.changePage = this.changePage.bind(this);
     }
 
     changePage(event) {
-      if ( event.target.innerText === 'HOME') {
+      if ( event.target.innerText === 'HOME' || event.target.innerText === 'Find My Furry Friend') {
         this.setState({page:'home'})
       } else if ( event.target.innerText === `I've Lost My Pet`) {
         this.setState({page:'lost'})
@@ -30,7 +31,7 @@ class App extends React.Component {
             </div>
         } else if (this.state.page === 'lost') {
             currentPage = <div>
-                <div className='pageTitle'>I've Lost My Pet</div>
+                <LostPet />
             </div>
         } else if (this.state.page === 'account') {
             currentPage = <div>
@@ -41,7 +42,8 @@ class App extends React.Component {
         return (
             <div className='all'>
                 <nav className='NavBar'>
-                <div className='Title'>Find My Furry Friend</div>
+                {/* <img src='https://findmyfurryfriend.s3-us-west-2.amazonaws.com/FF-Logo.png'></img> */}
+                <div className='Title' onClick={this.changePage}>Find My Furry Friend</div>
                     <div className='HomeSelector' onClick={this.changePage}> HOME </div>
                     <div className='LostSelector' onClick={this.changePage}> I've Lost My Pet </div>
                     <div className='FAQSelector'>FAQ</div>
