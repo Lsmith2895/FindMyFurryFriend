@@ -38,7 +38,10 @@ const LostPet = props => (
                 Nervous:<input type='radio' name='Friendliness' value='Nervous' />
                 Do Not Approach:<input type='radio' name='Friendliness' value='Do Not Approach' />
             </label>
+            <div>
             <input type="submit" name="Submit" />
+            </div>
+            
         </form>
 
     </div>
