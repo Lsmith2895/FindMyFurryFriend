@@ -32,7 +32,7 @@ const LostPet = props => (
                     name="Phone"
                     value={props.Phone}
                     onChange={props.handleChange}
-                    placeholder="1234567891"
+                    placeholder="123-456-7891"
                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                     required
                     maxLength='12'
@@ -62,62 +62,64 @@ const LostPet = props => (
             </label>
             <label>
                 <h4>Size</h4>
-                XS: <input
+                 <input
                     type='radio'
                     name='size'
                     value={props.size}
                     onChange={props.handleChange}
-                    value="XS" />
-                S: <input
+                    value="XS" /> XS
+
+                <input
                     type='radio'
                     name='size'
                     value={props.size}
                     onChange={props.handleChange}
-                    value="S" />
-                M: <input
+                    value="S" /> S
+
+                <input
                     type='radio'
                     name='size'
                     value={props.size}
                     onChange={props.handleChange}
                     value="M"
-                    defaultChecked />
-                L: <input
-                    type='radio' n
-                    ame='size'
+                    defaultChecked /> M
+                <input
+                    type='radio' 
+                    name='size'
                     value={props.size}
                     onChange={props.handleChange}
-                    value="L" />
-                XL: <input
+                    value="L" /> L
+                <input
                     type='radio'
                     name='size'
                     value={props.size}
                     onChange={props.handleChange}
-                    value="XL" />
+                    value="XL" /> XL
             </label>
             <label>
                 <h4>Friendliness Rating</h4>
-                Friendly: <input
+                <input
                     type='radio'
                     name='Friendliness'
                     value={props.Friendliness}
                     onChange={props.handleChange}
                     value='Friendly'
-                />
-                Nervous:<input
+                /> Friendly
+                <input
                     type='radio'
                     name='Friendliness'
                     value={props.Friendliness}
                     onChange={props.handleChange}
                     value='Nervous'
-                    defaultChecked
-                />
-                Do Not Approach:<input
+                    defaultChecked 
+                    />Nervous
+                <input
                     type='radio'
                     name='Friendliness'
                     value={props.Friendliness}
                     onChange={props.handleChange}
                     value='Do Not Approach'
-                />
+                /> Do Not Approach
             </label>
             <label>
                 <h4>Last Known Zip Code</h4>
