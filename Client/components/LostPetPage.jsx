@@ -39,6 +39,28 @@ const LostPet = props => (
                         maxLength='12'
                     />
                 </label>
+                <label>
+                    <h4>Last Known Zip Code</h4>
+                    <input type='number'
+                        name='LastZip'
+                        value={props.LastZip}
+                        onChange={props.handleChange}
+                        placeholder='99999'
+                        required
+                        maxLength='5'
+                    />
+                </label>
+                <label>
+                    <h4>Last Know location</h4>
+                    <input
+                        type='text'
+                        name='LastSeen'
+                        value={props.LastSeen}
+                        onChange={props.handleChange}
+                        placeholder='location/landmark'
+                        required
+                    />
+                </label>
             </div>
             <div className='column'>
 
@@ -126,28 +148,7 @@ const LostPet = props => (
                         value='Do Not Approach'
                     /> Do Not Approach
             </label>
-                <label>
-                    <h4>Last Known Zip Code</h4>
-                    <input type='number'
-                        name='LastZip'
-                        value={props.LastZip}
-                        onChange={props.handleChange}
-                        placeholder='99999'
-                        required
-                        maxLength='5'
-                    />
-                </label>
-                <label>
-                    <h4>Last Know location</h4>
-                    <input
-                        type='text'
-                        name='LastSeen'
-                        value={props.LastSeen}
-                        onChange={props.handleChange}
-                        placeholder='location/landmark'
-                        required
-                    />
-                </label>
+                
                 <label>
                     <h4>Photo of Pet:</h4>
                     <input type="file"
