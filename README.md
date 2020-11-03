@@ -16,7 +16,7 @@ Twilio
 2. npm install
 3. Start trial with Twilio https://www.twilio.com/login
   * A. get API key and Token
-  * B. Setup Twillio.config.js
+  * B. Setup Twillio.config.js (https://github.com/TwilioDevEd/lead-alerts-node/blob/main/config.js)
 4. Setup MySQL
   * A. a new database named `furryfriend`
   * B. create new table named `LostPets`
@@ -34,10 +34,13 @@ examples from Find My Furry Friend
 ## Open Endpoints
 Open Endpoints require no Authentication
 
-[Add to lost pets in the database:] Post `/api/LostForm`
+* Add to lost pets in the database: `Post /api/LostForm`
+* Retrieve List of pets: `Get /api/Pets`
 
+## Endpoints that require Authentication
+* Send SMS: `Post /leads` (this requires Twilio.Config.js to be set up )
 
 ## Contact
 Logan Smith - Lsmith2895@gmail.com
 Profile - https://github.com/Lsmith2895
-
+LinkedIn - https://www.linkedin.com/in/logansmith2895/
