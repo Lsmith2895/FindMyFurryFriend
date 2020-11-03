@@ -4,6 +4,7 @@ const config = require('../Twillio.config');
 const db = require('./db.js')
 const axios = require('axios');
 
+
 // Map routes to controller functions
 module.exports = function () {
     // Create an authenticated Twilio API client
@@ -11,7 +12,6 @@ module.exports = function () {
     const app = Express();
 
     app.post('/api/LostForm', (req, res) => {
-        console.log('you made it to the lost form in the router')
         db.query(
             `INSERT INTO LostPets VALUES ('${req.body.OwnerName}', '${req.body.Email}', '${req.body.Phone}', '${req.body.PetName}', '${req.body.Collar}', '${req.body.size}', '${req.body.Friendliness}', '${req.body.LastZip}', '${req.body.LastSeen}', '${req.body.Photo}');`
         )
@@ -60,6 +60,20 @@ module.exports = function () {
         //         res.status(500).send();
         //     })
     });
+
+    app.get('/api/Pets',  (req, res) => {
+
+      const lostPetList = db.query('SELECT * FROM LostPets', (err, data) => {
+         if(err) {
+             console.log(err);
+             res.send(500)
+         } else {
+             res.send(data);
+         }
+      });
+          
+         
+    })
 
     return app;
 };

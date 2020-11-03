@@ -4,6 +4,12 @@ body{
     padding: 0px;
     background-color: #2F2FA2;
 }
+ul {
+    all: unset;
+}
+li {
+    all: unset;
+}
 .PetCol img{
     object-fit: cover;
 }

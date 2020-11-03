@@ -20,28 +20,28 @@ class App extends React.Component {
             Photo: 'img.url.com',
             lostPetList: [
                 {
-                    OwnerName: 'Tom',
+                    OwnerName: 'Liz',
                     Email: 'klajsd;lfkj',
                     Phone: '123-456-7891',
-                    PetName: 'spot',
+                    PetName: 'Apollo',
                     Collar: 'green',
                     size: 'M',
                     Friendliness: 'Nervous',
                     LastZip: '99999',
                     LastSeen: 'pratt park',
-                    Photo: 'https://findmyfurryfriend.s3-us-west-2.amazonaws.com/catPic1.jpg',
+                    Photo: 'https://findmyfurryfriend.s3-us-west-2.amazonaws.com/liz.png',
                 },
                 {
-                    OwnerName: 'john',
+                    OwnerName: 'Josh',
                     Email: 'klajsd;lfkj',
                     Phone: '123-456-7891',
-                    PetName: 'spot',
+                    PetName: 'Puggie Smalls and Puggzie',
                     Collar: 'green',
                     size: 'M',
                     Friendliness: 'Nervous',
                     LastZip: '99999',
                     LastSeen: 'pratt park',
-                    Photo: 'https://findmyfurryfriend.s3-us-west-2.amazonaws.com/catPic2.jpg',
+                    Photo: 'https://findmyfurryfriend.s3-us-west-2.amazonaws.com/puggy.jpg',
                 }
             ]
         }
@@ -49,6 +49,18 @@ class App extends React.Component {
         this.changePage = this.changePage.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    componentDidMount(){
+        axios({
+            method: 'get',
+            url: '/api/Pets',
+        })
+        .then( (data) => {
+           this.setState({lostPetList: data.data})
+        })
+        .catch( (err) => {
+            console.log(err)
+        })
     }
 
     changePage(event) {
