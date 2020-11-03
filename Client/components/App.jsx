@@ -18,32 +18,7 @@ class App extends React.Component {
             LastZip: '99999',
             LastSeen: 'pratt park',
             Photo: 'img.url.com',
-            lostPetList: [
-                {
-                    OwnerName: 'Liz',
-                    Email: 'klajsd;lfkj',
-                    Phone: '123-456-7891',
-                    PetName: 'Apollo',
-                    Collar: 'green',
-                    size: 'M',
-                    Friendliness: 'Nervous',
-                    LastZip: '99999',
-                    LastSeen: 'pratt park',
-                    Photo: 'https://findmyfurryfriend.s3-us-west-2.amazonaws.com/liz.png',
-                },
-                {
-                    OwnerName: 'Josh',
-                    Email: 'klajsd;lfkj',
-                    Phone: '123-456-7891',
-                    PetName: 'Puggie Smalls and Puggzie',
-                    Collar: 'green',
-                    size: 'M',
-                    Friendliness: 'Nervous',
-                    LastZip: '99999',
-                    LastSeen: 'pratt park',
-                    Photo: 'https://findmyfurryfriend.s3-us-west-2.amazonaws.com/puggy.jpg',
-                }
-            ]
+            lostPetList: []
         }
 
         this.changePage = this.changePage.bind(this);
