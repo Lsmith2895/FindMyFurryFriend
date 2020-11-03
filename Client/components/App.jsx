@@ -7,7 +7,7 @@ class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            page: 'lost',
+            page: 'home',
             OwnerName: 'john',
             Email: 'klajsd;lfkj',
             Phone: '123-456-7891',
@@ -18,6 +18,32 @@ class App extends React.Component {
             LastZip: '99999',
             LastSeen: 'pratt park',
             Photo: 'img.url.com',
+            lostPetList: [
+                {
+                    OwnerName: 'Tom',
+                    Email: 'klajsd;lfkj',
+                    Phone: '123-456-7891',
+                    PetName: 'spot',
+                    Collar: 'green',
+                    size: 'M',
+                    Friendliness: 'Nervous',
+                    LastZip: '99999',
+                    LastSeen: 'pratt park',
+                    Photo: 'https://findmyfurryfriend.s3-us-west-2.amazonaws.com/catPic1.jpg',
+                },
+                {
+                    OwnerName: 'john',
+                    Email: 'klajsd;lfkj',
+                    Phone: '123-456-7891',
+                    PetName: 'spot',
+                    Collar: 'green',
+                    size: 'M',
+                    Friendliness: 'Nervous',
+                    LastZip: '99999',
+                    LastSeen: 'pratt park',
+                    Photo: 'https://findmyfurryfriend.s3-us-west-2.amazonaws.com/catPic2.jpg',
+                }
+            ]
         }
 
         this.changePage = this.changePage.bind(this);
@@ -50,16 +76,17 @@ class App extends React.Component {
         axios({
             method: 'post',
             url: '/api/LostForm',
-            data: formData, 
-          });
-        
+            data: formData,
+        });
+
         event.preventDefault();
     }
+    
     render() {
         let currentPage;
         if (this.state.page === 'home') {
             currentPage = <div>
-                <Home />
+                <Home lostPetList={this.state.lostPetList}/>
             </div>
         } else if (this.state.page === 'lost') {
             currentPage = <div>
@@ -78,7 +105,6 @@ class App extends React.Component {
         return (
             <div className='all'>
                 <nav className='NavBar'>
-                    {/* <img src='https://findmyfurryfriend.s3-us-west-2.amazonaws.com/FF-Logo.png'></img> */}
                     <div className='Title' onClick={this.changePage}>Find My Furry Friend</div>
                     <div className='HomeSelector' onClick={this.changePage}> HOME </div>
                     <div className='LostSelector' onClick={this.changePage}> I've Lost My Pet </div>

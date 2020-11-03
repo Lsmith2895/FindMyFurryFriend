@@ -5,7 +5,7 @@ import Found from './HomeColumnFound'
 const Home = props => (
     <div>
         <div className='column'>
-            <Lost />
+            <Lost lostPetList={props.lostPetList}/>
         </div>
 
         <div className='column'>
