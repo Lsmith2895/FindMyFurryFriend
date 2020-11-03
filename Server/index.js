@@ -17,6 +17,7 @@ app.post('/api/LostForm', (req, res) => {
   db.query(
     `INSERT INTO LostPets VALUES ('${req.body.OwnerName}', '${req.body.Email}', '${req.body.Phone}', '${req.body.PetName}', '${req.body.Collar}', '${req.body.size}', '${req.body.Friendliness}', '${req.body.LastZip}', '${req.body.LastSeen}', '${req.body.Photo}');`
   )
+  
   res.sendStatus(200)
 })
 
