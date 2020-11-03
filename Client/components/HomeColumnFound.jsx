@@ -8,8 +8,16 @@ const FoundColumn = props => (
                 <img src='https://findmyfurryfriend.s3-us-west-2.amazonaws.com/liz.png' alt='pet picture' className='PetPicture'></img>
             </div>
             <div className='PetCol'>
-              <div className='PetName'>Name: <span>Apollo</span></div>
-              <div className='FoundStory'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</div>
+                <div className='PetName'>Name: <span>Apollo</span></div>
+                <div className='FoundStory'>`And in that town a dog was found,
+                As many dogs there be,
+                Both mongrel, puppy, whelp and hound,
+                And curs of low degree.
+
+                This dog and man at first were friends;
+                But when a pique began,
+                The dog, to gain some private ends,
+Went mad and bit the man.`</div>
             </div>
         </div>
         <div className='PetInfoColumns'>
@@ -17,8 +25,13 @@ const FoundColumn = props => (
                 <img src='https://findmyfurryfriend.s3-us-west-2.amazonaws.com/puggy.jpg' alt='pet picture' className='PetPicture'></img>
             </div>
             <div className='PetCol'>
-              <div className='PetName'>Name: <span>Puggie Smallz and Steve</span></div>
-              <div className='FoundStory'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</div>
+                <div className='PetName'>Name: <span>Puggie Smallz and Steve</span></div>
+                <div className='FoundStory'>`Loving friend, the gift of one,
+                Who, her own true faith, hath run,
+                Through thy lower nature;
+                Be my benediction said
+                With my hand upon thy head,
+Gentle fellow-creature!`</div>
             </div>
         </div>
 
