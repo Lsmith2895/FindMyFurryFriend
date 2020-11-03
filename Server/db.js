@@ -5,8 +5,10 @@ var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: ''
+    database: 'furryfriend'
 });
+
+
 
 connection.connect((err) => {
     if (err) {
@@ -17,17 +19,5 @@ connection.connect((err) => {
 });
 
 //retrieve data from mysql database
-module.exports = {
-    // getAllMovies: (callback) => {
-    //     connection.query('SELECT * FROM movies', (err, data) => {
-    //         if (err) {
-    //             console.log(err)
-    //             callback(err);
-    //         } else {
-    //             callback(null, data)
-    //         }
-    //     })
-    // }
-}
-
+module.exports = connection;
 

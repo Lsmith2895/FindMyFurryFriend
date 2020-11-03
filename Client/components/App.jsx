@@ -47,7 +47,6 @@ class App extends React.Component {
 
     handleSubmit(event) {
         let formData = this.state
-        console.log(formData)
         axios({
             method: 'post',
             url: '/api/LostForm',
