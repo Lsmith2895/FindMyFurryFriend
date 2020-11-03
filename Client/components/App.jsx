@@ -7,7 +7,7 @@ class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            page: 'lost',
+            page: 'home',
             OwnerName: 'john',
             Email: 'klajsd;lfkj',
             Phone: '123-456-7891',
