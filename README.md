@@ -15,10 +15,13 @@ Twilio
 1. Clone from GitHub
 2. npm install
 3. Start trial with Twilio https://www.twilio.com/login
- A. get API key and Token
- B. Setup Twillio.config.js
+  A. get API key and Token
+  B. Setup Twillio.config.js
+4. Setup MySQL
+  A. a new database named "furryfriend"
+  B. create new table named "LostPets"
 
-##Contributing
+## Contributing
 1. Fork the Project
 2. Create your Feature Branch (git checkout -b feature/AmazingFeature)
 3. Commit your Changes (git commit -m 'Add some AmazingFeature')
@@ -31,7 +34,10 @@ examples from Find My Furry Friend
 ## Open Endpoints
 Open Endpoints require no Authentication
 
+Add to lost pets in the database: Post /api/LostForm
+
 
 ## Contact
 Logan Smith - Lsmith2895@gmail.com
 Profile - https://github.com/Lsmith2895
+
