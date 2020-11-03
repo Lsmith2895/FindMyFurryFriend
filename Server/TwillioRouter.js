@@ -1,51 +1,65 @@
+const Express = require('express');
 const Twilio = require('twilio');
 const config = require('../Twillio.config');
-const Express = require('express');
-
-
-// Some hard-coded information about a house
-var house = {
-    title: '555 Sunnybrook Lane',
-    price: '$349,999',
-    description: 'You and your family will love this charming home. '
-        + 'Featuring granite appliances, stainless steel windows, and '
-        + 'high efficiency dual mud rooms, this joint is loaded to the max. '
-        + 'Motivated sellers have priced for a quick sale, act now!'
-};
+const db = require('./db.js')
+const axios = require('axios');
 
 // Map routes to controller functions
 module.exports = function () {
     // Create an authenticated Twilio API client
     var client = new Twilio(config.accountSid, config.authToken);
-    const router = Express.Router();
+    const app = Express();
 
-    // Render landing page
-    router.get('/', function(request, response) {
-        response.render('index', house);
-    });
+    app.post('/api/LostForm', (req, res) => {
+        console.log('you made it to the lost form in the router')
+        db.query(
+            `INSERT INTO LostPets VALUES ('${req.body.OwnerName}', '${req.body.Email}', '${req.body.Phone}', '${req.body.PetName}', '${req.body.Collar}', '${req.body.size}', '${req.body.Friendliness}', '${req.body.LastZip}', '${req.body.LastSeen}', '${req.body.Photo}');`
+        )
 
-    // Send lead notification
-    router.post('/leads', function(request, response) {
-        // Assemble a text message body
-        var message = 'New lead received for ' + house.title + '. Call '
-            + request.body.name + ' at ' + request.body.phone + '. Message: "'
-            + request.body.message + '"';
+        const body = req.body
+        axios({
+            method: 'post',
+            url: '/leads',
+            data: body,
+            proxy: {
+                port: 3000,
+            }
 
-        // Send lead notification to agent
-        client.messages.create({
-            to: config.agentNumber,
-            from: config.twilioNumber,
-            body: message
         })
-        .then(() => {
-          // Otherwise, respond with 200 OK
-          response.status(200).send('Lead notification was successfully sent.');
+        .then((data) => {
+            res.sendStatus(200)
         })
         .catch((err) => {
-          console.error(err);
-          response.status(500).send();
+            console.log('error in axios request to /leads:', err);
+            res.send(500);
         })
     });
+    // Send lost notification
+    app.post('/leads', function (req, res) {
+        // Assemble a text message body
+        var message = 'A pet has been lost in your area,' +
+            ' please help us get our furry friend ' + req.body.PetName +
+            ' back to their parents. They were last Seen at ' + req.body.LastSeen + '. ' +
+            req.body.PetName + ' has a ' + req.body.Collar + ' collar on. If you find this friend ' +
+            'be sure to go to our website and select the found button' +
+            ' on the Home page beneath the pet\'s bio -Thanks from the Furry Friend Family';
+        console.log(message, "-----go to TwillioRouter and uncomment 48-60 to get messages sending-----")
+            res.send(200);
+        // Send lost notification to local
+        // client.messages.create({
+        //     to: config.agentNumber,
+        //     from: config.twilioNumber,
+        //     body: message
+        // })
+        //     .then(() => {
+        //         // Otherwise, respond with 200 OK
+        //         res.status(200).send('Lost Pet Notification sent');
+        //     })
+        //     .catch((err) => {
+        //         console.error(err);
+        //         res.status(500).send();
+        //     })
+    });
 
-    return router;
+    return app;
 };
