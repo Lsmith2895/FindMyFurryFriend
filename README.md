@@ -18,8 +18,8 @@ Twilio
   * A. get API key and Token
   * B. Setup Twillio.config.js (https://github.com/TwilioDevEd/lead-alerts-node/blob/main/config.js)
 4. Setup MySQL
-  * A. a new database named `furryfriend`
-  * B. create new table named `LostPets`
+  * A. Create a new database named `'furryfriend'`
+  * B. Create new table named `'LostPets'`
 
 ## Contributing
 1. Fork the Project
