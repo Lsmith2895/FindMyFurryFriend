@@ -1,5 +1,5 @@
 # FindMyFurryFriend
-Find My Furry Friend is a social application designed to alert others in your area that your pet has gotten away. It will send a message via SMS or through the app depending on your choice of set up. This messages will include things like your pets name, a picture, and how friendly they might be. It is designed to get the news out quickly and have others searching for your best friend ensuring they come back safe and sound.
+Find My Furry Friend is a social application designed to alert others in your area that your pet has gotten away. It will send a message via SMS or through the app depending on your choice of set up. This message will include things like your pets name, a picture, and how friendly they might be. It is designed to get the news out quickly and have others searching for your best friend ensuring they come back safe and sound.
 
 ## Built With
 React
