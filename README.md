@@ -29,7 +29,7 @@ Twilio
 5. Open a Pull Request 
 
 # API DOCS
-examples from Find My Furry Friend
+Find My Furry Friend
 
 ## Open Endpoints
 Open Endpoints require no Authentication
