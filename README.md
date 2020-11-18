@@ -39,7 +39,7 @@ Open Endpoints require no Authentication
 
 ## Endpoints that require Authentication
 * Send SMS: `Post /leads` (this requires Twilio.Config.js to be set up )
-
+ 
 ## Contact
 - Logan Smith - Lsmith2895@gmail.com
 - Profile     - https://github.com/Lsmith2895
