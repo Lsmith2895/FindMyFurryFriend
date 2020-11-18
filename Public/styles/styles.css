@@ -30,6 +30,7 @@ input:focus {
 }
 .NavBar .Title {
     font-size: 49px;
+    background: none;
     margin-left: 2.5%;
     color: #F62C72;
 }
@@ -88,7 +89,7 @@ input:focus {
     font-weight: bold;
     font-size: 1.3em;
     padding: 4.5px;
-    
+    text-shadow: 0 10px 27px black;
 }
 .PetCol {
     float:left;
@@ -104,7 +105,7 @@ input:focus {
     color: whitesmoke;
 }
 .PetPicture {
-    margin-top: 50px;
+    margin-top: 30px;
     height: 280px;
     width: 230px;
 }
@@ -139,18 +140,24 @@ input:focus {
   /* HOVER STATES */
 .HomeSelector:hover{
     cursor: pointer;
+    color: #F62C72;
+    
 }
 .AccountSelector:hover{
     cursor: pointer;
+    color: whitesmoke;
 }
 .LostSelector:hover{
     cursor: pointer;
+    color: #F62C72;
 }
 .FoundPetButton:hover{
     cursor: pointer;
+    color: greenyellow;
 }
-.FAQSelector{
+.FAQSelector:hover {
     cursor: pointer;
+    color: #F62C72;
 }
 .TrialSelector{
     cursor: pointer;

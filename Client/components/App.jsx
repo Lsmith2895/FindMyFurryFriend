@@ -38,7 +38,7 @@ class App extends React.Component {
         })
     }
 
-    changePage(event) {
+    changePage(event) { //change to event.target.id/classname to prevent changes in html to mess up the buttons
         if (event.target.innerText === 'HOME' || event.target.innerText === 'Find My Furry Friend') {
             this.setState({ page: 'home' })
         } else if (event.target.innerText === `I've Lost My Pet`) {
@@ -93,10 +93,10 @@ class App extends React.Component {
             <div className='all'>
                 <nav className='NavBar'>
                     <div className='Title' onClick={this.changePage}>Find My Furry Friend</div>
-                    <div className='HomeSelector' onClick={this.changePage}> HOME </div>
+                    <div className='HomeSelector' onClick={this.changePage}> Home </div>
                     <div className='LostSelector' onClick={this.changePage}> I've Lost My Pet </div>
                     <div className='FAQSelector'>FAQ</div>
-                    <div className='TrialSelector'><span>START ONE MONTH FREE TRIAL</span></div>
+                    <div className='TrialSelector'><span>DONATE</span></div>
                     <div className='AccountSelector' onClick={this.changePage}> My Account </div>
                 </nav>
                 <div className='CurrentPage'>{currentPage}</div>

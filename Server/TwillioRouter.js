@@ -34,6 +34,7 @@ module.exports = function () {
             res.send(500);
         })
     });
+    
     // Send lost notification
     app.post('/leads', function (req, res) {
         // Assemble a text message body
@@ -46,19 +47,19 @@ module.exports = function () {
         console.log(message, "-----go to TwillioRouter and uncomment 48-60 to get messages sending-----")
             res.send(200);
         // Send lost notification to local
-        // client.messages.create({
-        //     to: config.agentNumber,
-        //     from: config.twilioNumber,
-        //     body: message
-        // })
-        //     .then(() => {
-        //         // Otherwise, respond with 200 OK
-        //         res.status(200).send('Lost Pet Notification sent');
-        //     })
-        //     .catch((err) => {
-        //         console.error(err);
-        //         res.status(500).send();
-        //     })
+        client.messages.create({
+            to: config.agentNumber,
+            from: config.twilioNumber,
+            body: message
+        })
+            .then(() => {
+                // Otherwise, respond with 200 OK
+                res.status(200).send('Lost Pet Notification sent');
+            })
+            .catch((err) => {
+                console.error(err);
+                res.status(500).send();
+            })
     });
 
     app.get('/api/Pets',  (req, res) => {
