@@ -1,8 +1,10 @@
-body{
+body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin: 0px 0px 0px 4%;
-    padding: 0px;
+    margin: 0px 0px 0px 0px;
     background-color: #2F2FA2;
+}
+#all {
+    padding: 1em;
 }
 ul {
     all: unset;
@@ -15,23 +17,28 @@ input {
 }
 input:focus {
     background-color: lightblue;
-  }
+}
 .PetCol img{
     object-fit: cover;
 }
+.NavBar {
+    background-color: black;
+    width: 100%;
+}
 .NavBar div{
     font-size: 20px;
+    font-weight: bold;
     display: inline-block;
     margin: 0;
     padding: 0px;
-    color: #D5CDCC;
+    color: white;
     height: auto;
     width: auto;
 }
 .NavBar .Title {
     font-size: 49px;
     background: none;
-    margin-left: 2.5%;
+    margin-left: 10.5%;
     color: #F62C72;
 }
 .NavBar img{
@@ -64,7 +71,7 @@ input:focus {
 }
 .column {
     margin-top: 20px;
-    margin-left: 40px;
+    margin-left: 5em;
     float: left;
     width: 40%;
     height: 500px ;
@@ -96,9 +103,10 @@ input:focus {
     width: 40%;
     color: #F62C72;
     font-size: 23px;
+    margin-top: 30px;
 }
 .PetCol div{
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     
 }
 .PetCol div span{
@@ -116,7 +124,7 @@ input:focus {
     border: 3px solid #553D67;
 }
 .PetName{
-    margin-top: 50px;
+    margin-top: 30px;
 }
 .LostPetForm{
     margin-top: 50px;
@@ -141,7 +149,7 @@ input:focus {
 .HomeSelector:hover{
     cursor: pointer;
     color: #F62C72;
-    
+    animation-duration: 700ms;
 }
 .AccountSelector:hover{
     cursor: pointer;
@@ -174,4 +182,13 @@ input[type=button], input[type=submit], input[type=reset] {
     margin: 4px 2px;
     cursor: pointer;
     width: 60%;
+  }
+  /* animations */
+  @keyframes navbar {
+    from { 
+        background-color: white
+    }
+    to {
+        background-color: #F62C72;
+    }
   }
