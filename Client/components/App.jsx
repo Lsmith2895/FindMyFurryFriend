@@ -39,7 +39,7 @@ class App extends React.Component {
     }
 
     changePage(event) { //change to event.target.id/classname to prevent changes in html to mess up the buttons
-        if (event.target.innerText === 'HOME' || event.target.innerText === 'Find My Furry Friend') {
+        if (event.target.innerText === 'Home' || event.target.innerText === 'Find My Furry Friend') {
             this.setState({ page: 'home' })
         } else if (event.target.innerText === `I've Lost My Pet`) {
             this.setState({ page: 'lost' })

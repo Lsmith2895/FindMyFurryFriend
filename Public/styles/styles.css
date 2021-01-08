@@ -96,7 +96,10 @@ input:focus {
     font-weight: bold;
     font-size: 1.3em;
     padding: 4.5px;
-    text-shadow: 0 10px 27px black;
+    text-shadow:-4px 3px 3px black;
+}
+.PetInfoColumns span {
+    text-shadow: none;
 }
 .PetCol {
     float:left;

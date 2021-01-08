@@ -131,7 +131,7 @@ const LostPet = props => (
                         value={props.Friendliness}
                         onChange={props.handleChange}
                         value='Friendly'
-                    /> Friendly
+                    /> very Friendly
                 <input
                         type='radio'
                         name='Friendliness'
@@ -139,7 +139,7 @@ const LostPet = props => (
                         onChange={props.handleChange}
                         value='Nervous'
                         defaultChecked
-                    />Nervous
+                    /> Nervous
                 <input
                         type='radio'
                         name='Friendliness'
